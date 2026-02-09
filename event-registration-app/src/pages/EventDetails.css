@@ -1,0 +1,108 @@
+.event-details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.event-details-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.event-details-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.event-details-header h1 {
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.event-details-body {
+  padding: 2rem;
+}
+
+.event-detail-row {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.event-detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  display: block;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.detail-value {
+  display: block;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.detail-description {
+  color: #666;
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+
+.event-details-footer {
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.register-btn-large {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.register-btn-large:hover {
+  opacity: 0.9;
+}
+
+.back-btn {
+  background: #f8f9fa;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .event-details-container {
+    padding: 1rem;
+  }
+
+  .event-details-header h1 {
+    font-size: 1.5rem;
+  }
+}

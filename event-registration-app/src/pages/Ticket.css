@@ -1,0 +1,152 @@
+.ticket-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.ticket-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.ticket-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: white;
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.ticket-success h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+}
+
+.ticket-success p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.ticket-details {
+  padding: 2rem;
+}
+
+.ticket-details h2 {
+  color: #333;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #10b981;
+  padding-bottom: 0.5rem;
+}
+
+.ticket-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ticket-info-row:last-child {
+  border-bottom: none;
+}
+
+.ticket-label {
+  font-weight: 600;
+  color: #666;
+}
+
+.ticket-value {
+  color: #333;
+  text-align: right;
+  max-width: 60%;
+  word-break: break-word;
+}
+
+.ticket-status {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.status-confirmed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.ticket-footer {
+  padding: 2rem;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.ticket-note {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.home-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.home-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .ticket-container {
+    padding: 1rem;
+  }
+
+  .ticket-info-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ticket-value {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .ticket-success h1 {
+    font-size: 1.5rem;
+  }
+}
