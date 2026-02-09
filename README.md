@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Event Registration Platform - Complete Full Stack Application
 
 A production-ready Event Registration Platform with React frontend and Spring Boot backend.
@@ -344,3 +345,6 @@ Created for educational purposes.
 ---
 
 **Complete Full Stack Application** | React + Spring Boot + MySQL/H2 | JWT Auth | Role-Based Access | Deployment Ready
+=======
+# Event_Registration_Platform
+>>>>>>> 863bc2470bd6c02949491959576f6823f1b1c65a

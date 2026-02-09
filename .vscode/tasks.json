@@ -50,6 +50,30 @@
 			"type": "shell",
 			"command": "cd e:\\HackathonHcl; Write-Host 'Initializing Git repository...' -ForegroundColor Cyan; git init; Write-Host 'Adding all files...' -ForegroundColor Yellow; git add .; Write-Host 'Creating commit...' -ForegroundColor Green; git commit -m 'Event Registration Platform - Ready for deployment'; Write-Host 'Setting default branch to main...' -ForegroundColor Cyan; git branch -M main; Write-Host '✓ Git repository ready!' -ForegroundColor Green",
 			"problemMatcher": []
+		},
+		{
+			"label": "Push to GitHub",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Adding GitHub remote...' -ForegroundColor Cyan; git remote add origin https://github.com/Vyom-Jain1/Event_Registration_Platform.git; Write-Host 'Pushing to GitHub...' -ForegroundColor Yellow; git push -u origin main; Write-Host '✓ Successfully pushed to GitHub!' -ForegroundColor Green; Write-Host 'Repository: https://github.com/Vyom-Jain1/Event_Registration_Platform' -ForegroundColor Cyan",
+			"problemMatcher": []
+		},
+		{
+			"label": "Sync and Push",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Pulling existing content...' -ForegroundColor Yellow; git pull origin main --allow-unrelated-histories; Write-Host 'Pushing updated code...' -ForegroundColor Cyan; git push -u origin main; Write-Host '✓ Code deployed to GitHub!' -ForegroundColor Green",
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Status",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; git status",
+			"problemMatcher": []
+		},
+		{
+			"label": "Force Push",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Adding all changes...' -ForegroundColor Yellow; git add .; git commit -m 'Update with complete deployment configuration'; Write-Host 'Force pushing to GitHub...' -ForegroundColor Cyan; git push -f origin main; Write-Host '✓ Successfully deployed to GitHub!' -ForegroundColor Green; Write-Host 'View at: https://github.com/Vyom-Jain1/Event_Registration_Platform' -ForegroundColor Cyan",
+			"problemMatcher": []
 		}
 	]
 }
