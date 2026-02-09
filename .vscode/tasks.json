@@ -74,6 +74,36 @@
 			"type": "shell",
 			"command": "cd e:\\HackathonHcl; Write-Host 'Adding all changes...' -ForegroundColor Yellow; git add .; git commit -m 'Update with complete deployment configuration'; Write-Host 'Force pushing to GitHub...' -ForegroundColor Cyan; git push -f origin main; Write-Host '✓ Successfully deployed to GitHub!' -ForegroundColor Green; Write-Host 'View at: https://github.com/Vyom-Jain1/Event_Registration_Platform' -ForegroundColor Cyan",
 			"problemMatcher": []
+		},
+		{
+			"label": "Push Frontend Files",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Fixing frontend folder...' -ForegroundColor Cyan; Remove-Item -Recurse -Force event-registration-app\\.git; Write-Host 'Adding frontend files...' -ForegroundColor Yellow; git add event-registration-app/; Write-Host 'Committing...' -ForegroundColor Green; git commit -m 'Add complete frontend application files'; Write-Host 'Pushing to GitHub...' -ForegroundColor Cyan; git push origin main; Write-Host '✓ Frontend files pushed to GitHub!' -ForegroundColor Green",
+			"problemMatcher": []
+		},
+		{
+			"label": "Force Add Frontend",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Force adding frontend files...' -ForegroundColor Yellow; git add -f event-registration-app/src/; git add -f event-registration-app/public/; git add -f event-registration-app/package.json; git add -f event-registration-app/package-lock.json; git add -f event-registration-app/.env; git add -f event-registration-app/.env.production; git add -f event-registration-app/README.md; Write-Host 'Committing frontend...' -ForegroundColor Green; git commit -m 'Add all frontend source files'; Write-Host 'Pushing...' -ForegroundColor Cyan; git push origin main; Write-Host '✓ Done!' -ForegroundColor Green",
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Frontend on GitHub",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Checking repository status...' -ForegroundColor Cyan; git ls-tree -r main --name-only | Select-String 'event-registration-app' | Select-Object -First 20",
+			"problemMatcher": []
+		},
+		{
+			"label": "Fix Submodule",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Removing submodule...' -ForegroundColor Yellow; git rm -r --cached event-registration-app; Remove-Item .gitmodules -ErrorAction SilentlyContinue; Write-Host 'Adding frontend as regular folder...' -ForegroundColor Cyan; git add event-registration-app/; Write-Host 'Committing...' -ForegroundColor Green; git commit -m 'Convert frontend from submodule to regular folder'; Write-Host 'Pushing...' -ForegroundColor Cyan; git push origin main; Write-Host '✓ Frontend files are now on GitHub!' -ForegroundColor Green",
+			"problemMatcher": []
+		},
+		{
+			"label": "Push Changes",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Checking for changes...' -ForegroundColor Cyan; git status --short; Write-Host ''; Write-Host 'Adding all changes...' -ForegroundColor Yellow; git add .; Write-Host 'Committing...' -ForegroundColor Green; git commit -m 'Update environment configuration'; Write-Host 'Pushing to GitHub...' -ForegroundColor Cyan; git push origin main; Write-Host '✓ All changes pushed!' -ForegroundColor Green",
+			"problemMatcher": []
 		}
 	]
 }
