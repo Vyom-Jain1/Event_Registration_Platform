@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Stop Backend Process",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"$pid = (Get-NetTCPConnection -LocalPort 8081 -State Listen -ErrorAction SilentlyContinue).OwningProcess; if($pid){Stop-Process -Id $pid -Force; Write-Host 'Stopped backend process' -ForegroundColor Green; Start-Sleep -Seconds 2}"
+			]
+		},
+		{
+			"label": "Kill Backend",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"$proc = (Get-NetTCPConnection -LocalPort 8081 -State Listen -ErrorAction SilentlyContinue).OwningProcess; if($proc){Stop-Process -Id $proc -Force; Write-Host 'Backend stopped' -ForegroundColor Green; Start-Sleep -Seconds 2}"
+			]
+		},
+		{
+			"label": "Build Backend",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl\\event-registration-backend; mvn clean package -DskipTests",
+			"problemMatcher": []
+		},
+		{
+			"label": "Start Backend",
+			"type": "shell",
+			"command": "& \"C:\\Users\\91879\\.jdk\\jdk-21.0.8\\bin\\java.exe\" -jar \"e:\\HackathonHcl\\event-registration-backend\\target\\event-registration-backend-1.0.0.jar\" --spring.profiles.active=h2",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start Frontend",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl\\event-registration-app; npm start",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Git Status",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; git status",
+			"problemMatcher": []
+		},
+		{
+			"label": "Initialize Git Repo",
+			"type": "shell",
+			"command": "cd e:\\HackathonHcl; Write-Host 'Initializing Git repository...' -ForegroundColor Cyan; git init; Write-Host 'Adding all files...' -ForegroundColor Yellow; git add .; Write-Host 'Creating commit...' -ForegroundColor Green; git commit -m 'Event Registration Platform - Ready for deployment'; Write-Host 'Setting default branch to main...' -ForegroundColor Cyan; git branch -M main; Write-Host '✓ Git repository ready!' -ForegroundColor Green",
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,7 @@
+# Deployment-ready files
+
+node_modules
+build
+.env.local
+.DS_Store
+*.log
